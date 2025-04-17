@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joke Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    #joke {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      color: #333;
+      min-height: 80px;
+    }
+
+    button {
+      padding: 0.6rem 1.4rem;
+      font-size: 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Need a Laugh?</h1>
+    <div id="joke">Click the button to hear a joke!</div>
+    <button onclick="tellJoke()">Tell Me a Joke</button>
+  </div>
+
+  <script>
+    const jokes = [
+      "Why don’t skeletons fight each other? They don’t have the guts.",
+      "I'm reading a book about anti-gravity. It's impossible to put down!",
+      "Did you hear about the guy who invented Lifesavers? He made a mint!",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "I told my wife she was drawing her eyebrows too high. She looked surprised."
+    ];
+
+    let currentJoke = 0;
+
+    function tellJoke() {
+      document.getElementById("joke").textContent = jokes[currentJoke];
+      currentJoke = (currentJoke + 1) % jokes.length;
+    }
+  </script>
+
+</body>
+</html>
